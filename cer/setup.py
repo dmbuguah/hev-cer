@@ -92,7 +92,7 @@ setup(
         'sarge==0.1.5',
         'ipython==6.2.0',
         'drfdocs==0.0.11',
-        'ansible==2.6.2',
+        'ansible==2.6.18',
         'boto>=2.48.0',
     ],
     scripts=[
