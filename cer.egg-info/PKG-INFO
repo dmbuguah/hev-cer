@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: cer
+Version: 0.0.1
+Summary: Vehicle recommendation app
+Home-page: UNKNOWN
+Author: Sheriff
+Author-email: danmbugua74@gmail.com
+License: Proprietary
+Description: # hev-cer
+        A vehicle recommendation application based on selenium.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Alpha
+Classifier: Intended Audience :: All
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3 :: Only

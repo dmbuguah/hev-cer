@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 name = 'cer'
 
-with open('README.rst') as readme:
+with open('README.md') as readme:
     README = readme.read()
 
 stable_release = '0.0.1'
@@ -67,7 +67,8 @@ def get_version():
         # an installed package
         pass
 
-    return __version__
+    import cer
+    return cer.__version__
 
 
 setup(
@@ -75,7 +76,7 @@ setup(
     version=get_version(),
     packages=find_packages(exclude=['tests', 'tests.*']),
     description='Vehicle recommendation app',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
     url='',
     author='Sheriff',
     author_email='danmbugua74@gmail.com',
@@ -92,8 +93,9 @@ setup(
         'sarge==0.1.5',
         'ipython==6.2.0',
         'drfdocs==0.0.11',
-        'ansible==2.6.2',
+        'ansible>=2.6.18',
         'boto>=2.48.0',
+        'selenium',
     ],
     scripts=[
     ],
