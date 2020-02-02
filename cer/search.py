@@ -35,4 +35,15 @@ for model_option in all_models:
         model_option.click()
         break
 
+driver.find_element_by_id("year-control-minYear").click()
+
+yom = driver.find_element_by_xpath(
+        "//*[@id='__next']/div/section/header/div[2]/div[2]/div/form/div/div[2]/div[3]/div/div/ul/div[1]/select")
+all_yoms = yom.find_elements_by_tag_name("option")
+for all_yom in all_yoms:
+    if str(all_yom.get_attribute("value")) == '2013':
+        all_yom.click()
+        break
+
+driver.find_element_by_class_name('btni-search').click()
 #driver.quit()
