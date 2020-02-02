@@ -23,7 +23,6 @@ try:
         EC.presence_of_element_located(
             (By.CSS_SELECTOR, "option[value='54317ca841472697138cfcc5']"))
     )
-    print('Element found')
 except Exception as e:
     print('Element not found: {}'.format(str(e.args[0])))
 
@@ -46,4 +45,30 @@ for all_yom in all_yoms:
         break
 
 driver.find_element_by_class_name('btni-search').click()
-#driver.quit()
+
+try:
+    element = WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "option[value='priceUSD']"))
+    )
+except Exception as e:
+    print('Element not found: {}'.format(str(e.args[0])))
+
+
+sort_by = driver.find_element_by_xpath(
+            "//*[@id='__next']/div/section/div[1]/div[1]/div/div/div/div[2]/div[1]/div[2]/div[2]/div/select")
+all_sort_by = sort_by.find_elements_by_tag_name("option")
+sort_price = [sb for sb in all_sort_by if sb.get_attribute('value') == 'priceUSD']
+if sort_price:
+    sort_price[0].click()
+
+try:
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(
+            (By.CLASS_NAME, 'fa-sort-up'))
+    )
+    print('Element found')
+except Exception as e:
+    print('Element not found: {}'.format(str(e.args[0])))
+
+driver.quit()
