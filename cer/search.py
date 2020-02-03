@@ -10,8 +10,7 @@ driver.get('https://carfromjapan.com/')
 
 assert 'CAR FROM JAPAN' in driver.title
 
-make = driver.find_element_by_xpath(
-        "//*[@id='__next']/div/section/header/div[2]/div[2]/div/form/div/div[2]/div[1]/select")
+make = driver.find_element_by_xpath(CAR_MAKE)
 all_options = make.find_elements_by_tag_name("option")
 for option in all_options:
     if 'Mercedes' in option.text:
@@ -26,8 +25,7 @@ try:
 except Exception as e:
     print('Element not found: {}'.format(str(e.args[0])))
 
-model = driver.find_element_by_xpath(
-         "//*[@id='__next']/div/section/header/div[2]/div[2]/div/form/div/div[2]/div[2]/select")
+model = driver.find_element_by_xpath(CAR_MODEL)
 all_models = model.find_elements_by_tag_name("option")
 for model_option in all_models:
     if 'C-Class' in model_option.text:
@@ -36,8 +34,7 @@ for model_option in all_models:
 
 driver.find_element_by_id("year-control-minYear").click()
 
-yom = driver.find_element_by_xpath(
-        "//*[@id='__next']/div/section/header/div[2]/div[2]/div/form/div/div[2]/div[3]/div/div/ul/div[1]/select")
+yom = driver.find_element_by_xpath(CAR_YOM)
 all_yoms = yom.find_elements_by_tag_name("option")
 for all_yom in all_yoms:
     if str(all_yom.get_attribute("value")) == '2013':
